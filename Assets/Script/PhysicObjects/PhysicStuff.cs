@@ -39,15 +39,15 @@ public class PhysicStuff : MonoBehaviour
 		ContactPoint contact = other.GetContact(0);
 		if (other.relativeVelocity.sqrMagnitude < MessManager.Instance.data.softImpactSpeed) return;
 
-		switch (GetCollisionType(other.gameObject))
-		{
-			case CollisionType.Neutral:
-				GameObject part = MessManager.Instance.neutralParticlePool.GetPooledObject();
-				part.transform.position = contact.point;
-				part.transform.LookAt(contact.point - part.transform.position, Vector3.up);
-				part.SetActive(true);
-				break;
-		}
+		//switch (GetCollisionType(other.gameObject))
+		//{
+		//	case CollisionType.Neutral:
+		//		GameObject part = MessManager.Instance.neutralParticlePool.GetPooledObject();
+		//		part.transform.position = contact.point;
+		//		part.transform.LookAt(contact.point - part.transform.position, Vector3.up);
+		//		part.SetActive(true);
+		//		break;
+		//}
 	}
 
 	protected  virtual void OnCollisionExit(Collision other)
