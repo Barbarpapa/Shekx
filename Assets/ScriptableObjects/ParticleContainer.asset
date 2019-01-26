@@ -12,5 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0ddc60f73f44b14f913fd9ea63a0f48, type: 3}
   m_Name: ParticleContainer
   m_EditorClassIdentifier: 
-  impactParticles: {fileID: 6830089852189381049, guid: 3e35c653a9b697d47bad21dd8c2d0131,
+  hurtParticles: {fileID: 6830089852189381049, guid: 3e35c653a9b697d47bad21dd8c2d0131,
     type: 3}
+  loveParticles: {fileID: 6830089852189381049, guid: d7ccb0cd55bb6b54db270771f75b41ef,
+    type: 3}
+  neutralParticles: {fileID: 0}

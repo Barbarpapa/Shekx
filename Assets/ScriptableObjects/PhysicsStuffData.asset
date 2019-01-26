@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 553e9ad3aeba89b408da14fb5e09fe6c, type: 3}
   m_Name: PhysicsStuffData
   m_EditorClassIdentifier: 
-  hurtImpactSpeed: 2
+  hurtImpactSpeed: 20
+  softImpactSpeed: 5
