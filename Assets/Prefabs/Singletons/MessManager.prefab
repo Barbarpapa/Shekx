@@ -46,3 +46,9 @@ MonoBehaviour:
   colorContainer: {fileID: 11400000, guid: 475f82bacedd404499694930da2597fa, type: 2}
   particleContainer: {fileID: 11400000, guid: 5abacb90ad88e9f429a57efceecc6421, type: 2}
   data: {fileID: 11400000, guid: 2c07bcfafe52b334aad6f697fb758e05, type: 2}
+  humanLayer:
+    serializedVersion: 2
+    m_Bits: 1024
+  furnitureLayer:
+    serializedVersion: 2
+    m_Bits: 2048

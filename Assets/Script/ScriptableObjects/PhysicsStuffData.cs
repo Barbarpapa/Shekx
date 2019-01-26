@@ -6,5 +6,6 @@ using UnityEngine;
 public class PhysicsStuffData : ScriptableObject
 {
 	[Header("Impact")]
-	public float hurtImpactSpeed = 2f;
+	public float hurtImpactSpeed = 20f;
+	public float softImpactSpeed = 2f;
 }

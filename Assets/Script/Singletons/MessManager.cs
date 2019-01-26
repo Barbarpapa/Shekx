@@ -34,6 +34,19 @@ public class MessManager : MonoBehaviour
 	public ColorContainer colorContainer;
 	public ParticleContainer particleContainer;
 	public PhysicsStuffData data;
+	public ObjectPooled neutralParticlePool;
+
+	public LayerMask humanLayer;
+	public LayerMask furnitureLayer;
+
+	private void Start()
+	{
+		if (!(neutralParticlePool is ObjectPooled))
+		{
+			neutralParticlePool = 
+				GameObject.Find("NeutralParticlesPool").GetComponent<ObjectPooled>();
+		}
+	}
 
 	private void Update()
 	{
