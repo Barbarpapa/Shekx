@@ -16,7 +16,9 @@ public class GravityManager : MonoBehaviour {
 
 	public Vector3 velocity;
 
-	public AnimationCurve movement;
+	public AnimationCurve angleCurve;
+	[Range(0, 1)]
+	public float angleFactor = 0.5f;
 
 	void Start () {
 		rb = GetComponent<Rigidbody> ();
@@ -32,14 +34,21 @@ public class GravityManager : MonoBehaviour {
 
 	void UpdateAcceleration() {
 		acceleration = Input.acceleration;
+		acceleration = new Vector3 (acceleration.x, acceleration.y, -acceleration.z);
+
+		Quaternion q = Quaternion.FromToRotation (Vector3.down, acceleration);
+		float angle = Quaternion.Angle (Quaternion.identity, q);
+		if (angle > 90.0f)
+			angle -= 90.0f;
+
+		q = Quaternion.LerpUnclamped (Quaternion.identity, q, angleCurve.Evaluate (angle / 90.0f) * angleFactor);
+		acceleration = q * acceleration;
 	}
 
 	void Update () {
 		Vector3 lastAcceleration = acceleration;
 
 		UpdateAcceleration ();
-
-		acceleration = new Vector3 (acceleration.x, acceleration.y, -acceleration.z);
 
 		deltaAcceleration = acceleration - lastAcceleration;
 		float mag = deltaAcceleration.magnitude / 10.0f;
@@ -51,7 +60,5 @@ public class GravityManager : MonoBehaviour {
 
 		//rb.AddForce (deltaAcceleration * deltaScale, ForceMode.VelocityChange);
 		rb.velocity = deltaAcceleration * deltaScale;
-
-		movement.AddKey (Time.unscaledTime, deltaAcceleration.magnitude);
 	}
 }
