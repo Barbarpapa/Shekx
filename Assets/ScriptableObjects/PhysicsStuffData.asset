@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: PhysicsStuffData
   m_EditorClassIdentifier: 
   hurtImpactSpeed: 20
-  softImpactSpeed: 5
+  softImpactSpeed: 0

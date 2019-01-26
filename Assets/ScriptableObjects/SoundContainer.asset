@@ -12,4 +12,73 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b96c2091deb7cc4cb63428f91fa2932, type: 3}
   m_Name: SoundContainer
   m_EditorClassIdentifier: 
-  voices: []
+  humanSoundbank:
+  - hello: {fileID: 8300000, guid: ae6f046e7c4d8d543946a6837b6b1e93, type: 3}
+    hardSex:
+    - {fileID: 8300000, guid: 090bac77a7693f74ca6af708fa9976c6, type: 3}
+    - {fileID: 8300000, guid: 19342dd97cdbb2b489554edf1dd76645, type: 3}
+    - {fileID: 8300000, guid: 50124c58376b0d441aaa30c3f9cf5d57, type: 3}
+    - {fileID: 8300000, guid: 81f8ad497e60deb409fa36fa5066ab8c, type: 3}
+    - {fileID: 8300000, guid: ee6d42785c26e6842b08b618e55568a9, type: 3}
+    softSex:
+    - {fileID: 8300000, guid: bbafc9d639915eb4aa580c265377ffbc, type: 3}
+    - {fileID: 8300000, guid: 4746d217caee6e140a57d290a64309c6, type: 3}
+    - {fileID: 8300000, guid: 323ccbfb178f18742a7dca421fce8ca3, type: 3}
+    - {fileID: 8300000, guid: fb8a79e706215344fa4e8490bd7e9033, type: 3}
+    - {fileID: 8300000, guid: 649df13a1e1c1c946adc0e1aaceb9fc7, type: 3}
+    stopSex:
+    - {fileID: 8300000, guid: 440491c70f5ae3947829c3ab438ae572, type: 3}
+    - {fileID: 8300000, guid: f8556deb262cece4eaae7420d40776df, type: 3}
+    - {fileID: 8300000, guid: 7c3a63f119aaca74aa57f7b381f6923e, type: 3}
+    hurt:
+    - {fileID: 8300000, guid: c6bdc52ffb178f343bc32657701f6f1d, type: 3}
+    - {fileID: 8300000, guid: d5d64592153d1d94eb367d69240f68df, type: 3}
+    - {fileID: 8300000, guid: 8a10d91908f71e24e8c8933586bba58e, type: 3}
+    - {fileID: 8300000, guid: 6bed4bec8a5f1014bb8c22b849d3944a, type: 3}
+    - {fileID: 8300000, guid: 4973936bb17dc744c90edf967c048eb3, type: 3}
+    surprised:
+    - {fileID: 8300000, guid: 1ad9eb3df95a97045ba68457b28bc88a, type: 3}
+    - {fileID: 8300000, guid: 57a47c99efe57bf41b0c45a56131554f, type: 3}
+    - {fileID: 8300000, guid: be69ecb79f41cd94c9eb919fe4833e7b, type: 3}
+    touched:
+    - {fileID: 8300000, guid: 224b52b62be6ecc44a3e8a353154cba3, type: 3}
+    - {fileID: 8300000, guid: 4b61b555db540f34481d6ddf6230aa09, type: 3}
+    - {fileID: 8300000, guid: d3c0b0bdade5c5f49b46ad71255b57fb, type: 3}
+    - {fileID: 8300000, guid: f99de84e8705bfc48a8c98cb41870505, type: 3}
+    - {fileID: 8300000, guid: 25451f40940091f429af9c7a2096f15f, type: 3}
+  - hello: {fileID: 8300000, guid: 5a35f82755a8f3047a8e86d5caa1f64a, type: 3}
+    hardSex:
+    - {fileID: 8300000, guid: 35b95440a9943e441968ff2de376dfb2, type: 3}
+    - {fileID: 8300000, guid: cef13658ddf43b343860f99c5046035a, type: 3}
+    - {fileID: 8300000, guid: d5559af5d3a4c0f46b6f64da35c63eb0, type: 3}
+    - {fileID: 8300000, guid: b759dd4823aba804aa55f994e5d9a0cb, type: 3}
+    - {fileID: 8300000, guid: 757f81f274246f949947b9012f0a03ed, type: 3}
+    softSex:
+    - {fileID: 8300000, guid: e54f9ee62c454544aaad95eff059be95, type: 3}
+    - {fileID: 8300000, guid: 2ad7ca49f427da445b3c0f57837ea710, type: 3}
+    - {fileID: 8300000, guid: f40ca68e7e880c943a59d39752839153, type: 3}
+    - {fileID: 8300000, guid: 85e2973037b96ee4587e4c5be8cb3fc6, type: 3}
+    - {fileID: 8300000, guid: 27b4d24f72e308543b8237b864c97637, type: 3}
+    stopSex:
+    - {fileID: 8300000, guid: 299a3baea01e9314e828130caa792b6e, type: 3}
+    - {fileID: 8300000, guid: fa3c4fbd58e63a949aa24e6735b95e87, type: 3}
+    - {fileID: 8300000, guid: c4e1ba53127dc654e8bd9cb4dbb050df, type: 3}
+    hurt:
+    - {fileID: 8300000, guid: e1a8524d89e0744468b1b760a3b03f24, type: 3}
+    - {fileID: 8300000, guid: 0cc3a416f0c4999419f86e941d057225, type: 3}
+    - {fileID: 8300000, guid: 05fc15da8aadc7a4189d1541b80c8989, type: 3}
+    - {fileID: 8300000, guid: a6091503b14542946bfff8007314808c, type: 3}
+    - {fileID: 8300000, guid: 85bdc06c5c28a0b4a9e728daeefe0542, type: 3}
+    surprised:
+    - {fileID: 8300000, guid: 4934ee9372d683d4dac7e0ac842509af, type: 3}
+    - {fileID: 8300000, guid: 9c52f1e546623d643a6a68b7e1f697f4, type: 3}
+    - {fileID: 8300000, guid: b6b95b72f930e2948bb8b26bbca9c6f8, type: 3}
+    touched:
+    - {fileID: 8300000, guid: d29def2b6437b644db1c4adb2cf6f7c0, type: 3}
+    - {fileID: 8300000, guid: 3ce07eb7cc9b68549ba15915ddd61a11, type: 3}
+    - {fileID: 8300000, guid: d3347ca12531fdc48a2447884eeb7eca, type: 3}
+    - {fileID: 8300000, guid: cfb1cea57b40b1b4d9fc61681fd334a4, type: 3}
+    - {fileID: 8300000, guid: 20651a0c2367cd847b30440cabaa42cf, type: 3}
+  impactSound: {fileID: 0}
+  menuMusic: {fileID: 8300000, guid: 66991c1950e62e040979c3054b125e75, type: 3}
+  gameMusic: {fileID: 8300000, guid: 480a216031934bb4f87f63224e68f9bb, type: 3}
