@@ -15,6 +15,7 @@ public class Furniture : PhysicStuff
 
 	protected override void OnCollisionEnter(Collision other)
 	{
+		base.OnCollisionEnter(other);
 		if (isStatic)
 		{
 
