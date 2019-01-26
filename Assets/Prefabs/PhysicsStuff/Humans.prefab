@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6728bd5301dc9d9418a8690f71b681ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  identityRange: 0
+  identity: 0
 --- !u!33 &6537132635721646867
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -100,7 +100,7 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6537132635721646871}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: d2db3e16218aba341a060f9430021b7f, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -121,4 +121,4 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1

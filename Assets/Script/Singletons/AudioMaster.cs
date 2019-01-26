@@ -33,12 +33,12 @@ public class AudioMaster : MonoBehaviour
 
 	public void PlayVoiceSound(int index)
 	{
-		AudioSource.PlayClipAtPoint(Instance.soundContainer.voices[index], Vector3.zero);
+		//AudioSource.PlayClipAtPoint(Instance.soundContainer.voices[index], Vector3.zero);
 	}
 
 	public void PlayImpactsound()
 	{
-		AudioSource.PlayClipAtPoint(Instance.soundContainer.impactSound, Vector3.zero);
+		//AudioSource.PlayClipAtPoint(Instance.soundContainer.impactSound, Vector3.zero);
 	}
 	
 }

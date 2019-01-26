@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenuAttribute(fileName = "SoundContainer", menuName = "SoundContainer")]
+[CreateAssetMenuAttribute(fileName = "SoundContainer", menuName = "CestLeSHEKS/SoundContainer")]
 public class SoundContainer : ScriptableObject
 {
 	[Header("Humans")]

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenuAttribute(fileName = "ColorContainer", menuName = "ColorContainer")]
+[CreateAssetMenuAttribute(fileName = "ColorContainer", menuName = "CestLeSHEKS/ColorContainer")]
 public class ColorContainer : ScriptableObject
 {
 

@@ -32,6 +32,8 @@ public class MessManager : MonoBehaviour
 
 	private bool pause;
 	public ColorContainer colorContainer;
+	public ParticleContainer particleContainer;
+	public PhysicsStuffData data;
 
 	private void Update()
 	{
