@@ -29,8 +29,7 @@ public class AudioMaster : MonoBehaviour
 		}
 	}
 
-	[SerializeField] private SoundContainer soundContainer;
-	private AudioSource source;
+	public SoundContainer soundContainer;
 
 	public void PlayVoiceSound(int index)
 	{

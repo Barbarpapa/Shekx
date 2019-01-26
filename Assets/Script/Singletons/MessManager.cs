@@ -41,5 +41,4 @@ public class MessManager : MonoBehaviour
 		Time.timeScale = pause ? 0f : 1f;
 	}
 
-
 }

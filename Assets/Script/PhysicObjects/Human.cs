@@ -5,7 +5,6 @@ using UnityEngine;
 public class Human : PhysicStuff
 {
 	[SerializeField]
-	private int identityRange;
 	private int identity;
 
 	private Material skin;
@@ -14,7 +13,7 @@ public class Human : PhysicStuff
 	protected override void Start()
 	{
 		base.Start();
-		identity = Random.Range(0, identityRange);
+		identity = Random.Range(0, AudioMaster.Instance.soundContainer.GetVoiceRange());
 
 		skin = GetComponentInChildren<MeshRenderer>().material;
 

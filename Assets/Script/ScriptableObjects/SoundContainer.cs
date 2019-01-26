@@ -8,4 +8,9 @@ public class SoundContainer : ScriptableObject
 
 	[Header("Furniture")]
 	public AudioClip impactSound;
+
+	public int GetVoiceRange()
+	{
+		return voices.Length;
+	}
 }
