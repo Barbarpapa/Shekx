@@ -6,6 +6,7 @@ public class Human : PhysicStuff
 {
 
 	[SerializeField] private ParticleSystem surpriseParticles;
+	[SerializeField] private ParticleSystem helloParticles;
 	private int identity;
 	private float arouseFactor;
 	private float lastArouseFactor;
@@ -32,6 +33,11 @@ public class Human : PhysicStuff
 		}
 
 		StartCoroutine(PlayHelloWithDelay());
+	}
+
+	private void OnEnable()
+	{
+		helloParticles.Play();
 	}
 
 	private IEnumerator PlayHelloWithDelay()
