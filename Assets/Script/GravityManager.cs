@@ -56,7 +56,8 @@ public class GravityManager : MonoBehaviour {
 	}
 
 	private void FixedUpdate () {
-		Physics.gravity = acceleration * gravityScale;
+		//Physics.gravity = acceleration * gravityScale;
+		Physics.gravity = Vector3.down * gravityScale;
 
 		//rb.AddForce (deltaAcceleration * deltaScale, ForceMode.VelocityChange);
 		rb.velocity = deltaAcceleration * deltaScale;

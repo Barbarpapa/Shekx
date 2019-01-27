@@ -13,8 +13,8 @@ public class HumanSpawner : MonoBehaviour {
 	public Rigidbody door2;
 
 	public Vector3 spawnForce;
-
-	void Start () {
+	
+	public void Play () {
 		StartCoroutine (StartCountdown());
 	}
 	
@@ -23,6 +23,7 @@ public class HumanSpawner : MonoBehaviour {
 		Spawn ();
 	}
 
+	[ContextMenu ("Spawn")]
 	protected virtual void Spawn() {
 		if (door1)
 			door1.isKinematic = false;
@@ -31,5 +32,12 @@ public class HumanSpawner : MonoBehaviour {
 		Rigidbody character = (Instantiate (prefab, spawnTransform.position, spawnTransform.rotation, null)).GetComponentInChildren<Rigidbody>();
 		if (character)
 			character.AddForce (transform.rotation * spawnForce, ForceMode.Impulse);
+	}
+
+	public void ResetSpawn() {
+		if (door1)
+			door1.isKinematic = true;
+		if (door2)
+			door2.isKinematic = true;
 	}
 }
