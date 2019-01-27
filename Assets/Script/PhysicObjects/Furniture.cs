@@ -8,13 +8,14 @@ public class Furniture : MonoBehaviour {
 	private new Rigidbody rigidbody;
 	private int colls;
 	[SerializeField] private int collisionToMove;
-	private Transform startTransform;
+	private Vector3 basePosition;
+	private Quaternion baseRotation;
 
 	private void Start()
 	{
 		rigidbody = GetComponent<Rigidbody>();
-		startTransform.position = transform.position;
-		startTransform.rotation = transform.rotation;
+		basePosition = transform.position;
+		baseRotation = transform.rotation;
 	}
 
 	private void OnCollisionEnter(Collision other)
@@ -36,7 +37,7 @@ public class Furniture : MonoBehaviour {
 
 	public void ResetTransform () {
 		rigidbody.isKinematic = true;
-		transform.position = startTransform.position;
-		transform.rotation = startTransform.rotation;
+		transform.position = basePosition;
+		transform.rotation = baseRotation;
 	}
 }
