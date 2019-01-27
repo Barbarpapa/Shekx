@@ -111,18 +111,15 @@ public class Human : PhysicStuff
 				break;
 
 			case CollisionType.Hurt:
+				if (Time.time - timeSinceLastSound < Random.Range(0.5f, 2f)) return;
 				hurtParticles.transform.position = transform.position;
 				hurtParticles.transform
 					.LookAt(hurtParticles.transform.position - contact.point, Vector3.up);
 				hurtParticles.Play();
 				AudioMaster.Instance.PlayHurtSound(identity);
+				timeSinceLastSound = Time.time;
 				break;
 		}
-	}
-
-	protected override void OnCollisionExit(Collision other)
-	{
-		base.OnCollisionExit(other);
 	}
 
 }
