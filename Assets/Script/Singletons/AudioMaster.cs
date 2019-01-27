@@ -34,17 +34,17 @@ public class AudioMaster : MonoBehaviour
 
 	public void PlayMenuMusic()
 	{
-		AudioSource.PlayClipAtPoint(Instance.soundContainer.menuMusic, Vector3.zero);
+		AudioSource.PlayClipAtPoint(Instance.soundContainer.menuMusic, transform.position);
 	}
 
 	public void PlayGameMusic()
 	{
-		AudioSource.PlayClipAtPoint(Instance.soundContainer.gameMusic, Vector3.zero);
+		AudioSource.PlayClipAtPoint(Instance.soundContainer.gameMusic, transform.position);
 	}
 
 	public void PlayHelloSound(int index)
 	{
-		AudioSource.PlayClipAtPoint(Instance.soundContainer.humanSoundbank[index].hello, Vector3.zero);
+		AudioSource.PlayClipAtPoint(Instance.soundContainer.humanSoundbank[index].hello, transform.position);
 	}
 
 	public void PlayHardSexSound(int index)
@@ -53,7 +53,7 @@ public class AudioMaster : MonoBehaviour
 		AudioSource
 			.PlayClipAtPoint(
 				Instance.soundContainer.humanSoundbank[index].hardSex[rand],
-				Vector3.zero);
+				transform.position);
 	}
 
 	public void PlaySoftSexSound(int index)
@@ -62,7 +62,7 @@ public class AudioMaster : MonoBehaviour
 		AudioSource
 			.PlayClipAtPoint(
 				Instance.soundContainer.humanSoundbank[index].softSex[rand],
-				Vector3.zero);
+				transform.position);
 	}
 
 	public void PlayStopSexSound(int index)
@@ -71,7 +71,7 @@ public class AudioMaster : MonoBehaviour
 		AudioSource
 			.PlayClipAtPoint(
 				Instance.soundContainer.humanSoundbank[index].stopSex[rand],
-				Vector3.zero);
+				transform.position);
 	}
 
 	public void PlayHurtSound(int index)
@@ -80,7 +80,7 @@ public class AudioMaster : MonoBehaviour
 		AudioSource
 			.PlayClipAtPoint(
 				Instance.soundContainer.humanSoundbank[index].hurt[rand],
-				Vector3.zero);
+				transform.position);
 	}
 
 	public void PlaySurprisedSound(int index)
@@ -89,7 +89,7 @@ public class AudioMaster : MonoBehaviour
 		AudioSource
 			.PlayClipAtPoint(
 				Instance.soundContainer.humanSoundbank[index].surprised[rand],
-				Vector3.zero);
+				transform.position);
 	}
 
 	public void PlayTouchedSound(int index)
@@ -98,7 +98,7 @@ public class AudioMaster : MonoBehaviour
 		AudioSource
 			.PlayClipAtPoint(
 				Instance.soundContainer.humanSoundbank[index].touched[rand],
-				Vector3.zero);
+				transform.position);
 	}
 
 }
