@@ -2,20 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Furniture : PhysicStuff
+public class Furniture : MonoBehaviour
 {
 	public bool isStatic;
-	public CollisionType type;
+	private new Rigidbody rigidbody;
 
-	protected override void Start()
+	private void Start()
 	{
-		base.Start();
+		rigidbody = GetComponent<Rigidbody>();
 		rigidbody.isKinematic = true;
 	}
 
-	protected override void OnCollisionEnter(Collision other)
+	private void OnCollisionEnter(Collision other)
 	{
-		base.OnCollisionEnter(other);
 		if (isStatic)
 		{
 
@@ -24,7 +23,5 @@ public class Furniture : PhysicStuff
 		{
 			rigidbody.isKinematic = false;
 		}
-
-
 	}
 }

@@ -31,7 +31,6 @@ public class PhysicStuff : MonoBehaviour
 
 	protected virtual void FixedUpdate()
 	{
-		
 	}
 
 	protected virtual void OnCollisionEnter(Collision other)
@@ -52,7 +51,6 @@ public class PhysicStuff : MonoBehaviour
 
 	protected  virtual void OnCollisionExit(Collision other)
 	{
-
 		hurtParticles.Stop();
 	}
 
