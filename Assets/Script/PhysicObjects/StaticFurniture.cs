@@ -10,7 +10,8 @@ public class StaticFurniture : MonoBehaviour
 
 	private void OnCollisionEnter(Collision other)
 	{
-		if (Time.time - lastTimeCollision < Random.Range(0.5f, 2f)) return;
+		if (sounds.Length == 0 ||
+			Time.time - lastTimeCollision < Random.Range(0.5f, 2f)) return;
 
 		int rand = Random.Range(0, sounds.Length);
 		source.PlayOneShot(sounds[rand]);
