@@ -93,7 +93,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isStatic: 0
-  type: 2
+  hurt: 1
 --- !u!54 &1755554289779495921
 Rigidbody:
   m_ObjectHideFlags: 0
