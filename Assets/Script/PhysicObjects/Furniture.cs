@@ -7,22 +7,32 @@ public class Furniture : MonoBehaviour
 	public bool isStatic;
 	public bool hurt;
 	private new Rigidbody rigidbody;
+	private int colls;
+	[SerializeField] private int collisionToMove;
 
 	private void Start()
 	{
 		rigidbody = GetComponent<Rigidbody>();
-		rigidbody.isKinematic = true;
+		if (isStatic = true)
+		{
+			rigidbody.isKinematic = false;
+		}
 	}
 
 	private void OnCollisionEnter(Collision other)
 	{
-		if (isStatic)
-		{
+		if (!isStatic || colls > collisionToMove) return;
 
-		}
-		else
+		if (MessManager.Instance.humanLayer
+		    == (MessManager.Instance.humanLayer | (1 << other.gameObject.layer)))
 		{
-			rigidbody.isKinematic = false;
+				colls++;
+			if (colls == collisionToMove)
+			{
+				rigidbody.isKinematic = false;
+				isStatic = false;
+			}
 		}
+
 	}
 }

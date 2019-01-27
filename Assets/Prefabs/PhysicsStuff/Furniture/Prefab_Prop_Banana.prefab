@@ -92,8 +92,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81f8e1d217da61848a6808081ff2ed9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isStatic: 0
+  isStatic: 1
   hurt: 0
+  collisionToMove: 1
 --- !u!136 &140757392
 CapsuleCollider:
   m_ObjectHideFlags: 0
