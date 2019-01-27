@@ -53,6 +53,7 @@ public class MenuShakeDetection : MonoBehaviour {
 		playing = true;
 		cameraManager.ZoomIn ();
 		StartCoroutine (FadeGroup (menuGroup, 0.0f));
+		AudioMaster.Instance.PlayGameMusic();
 	}
 
 	void StartSpawners() {

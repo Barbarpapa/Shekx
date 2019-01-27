@@ -34,12 +34,14 @@ public class AudioMaster : MonoBehaviour
 
 	public void PlayMenuMusic()
 	{
-		Camera.main.GetComponent<AudioSource>().PlayOneShot(Instance.soundContainer.menuMusic);
+		Camera.main.GetComponent<AudioSource>().clip = Instance.soundContainer.menuMusic;
+		Camera.main.GetComponent<AudioSource>().Play();
 	}
 
 	public void PlayGameMusic()
 	{
-		Camera.main.GetComponent<AudioSource>().PlayOneShot(Instance.soundContainer.gameMusic);
+		Camera.main.GetComponent<AudioSource>().clip = Instance.soundContainer.gameMusic;
+		Camera.main.GetComponent<AudioSource>().Play();
 	}
 
 	public void PlayHelloSound(int index)

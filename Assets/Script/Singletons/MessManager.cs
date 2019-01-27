@@ -47,7 +47,7 @@ public class MessManager : MonoBehaviour
 				GameObject.Find("NeutralParticlesPool").GetComponent<ObjectPooled>();
 		}
 
-		AudioMaster.Instance.PlayGameMusic();
+		AudioMaster.Instance.PlayMenuMusic();
 	}
 
 	private void Update()
