@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4405115427834917310}
   - component: {fileID: 1217389904202717774}
   - component: {fileID: 459273476}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: Prefab_Prop_Piano
   m_TagString: Untagged
   m_Icon: {fileID: 0}
