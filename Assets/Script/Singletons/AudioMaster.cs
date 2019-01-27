@@ -34,12 +34,12 @@ public class AudioMaster : MonoBehaviour
 
 	public void PlayMenuMusic()
 	{
-		AudioSource.PlayClipAtPoint(Instance.soundContainer.menuMusic, transform.position);
+		Camera.main.GetComponent<AudioSource>().PlayOneShot(Instance.soundContainer.menuMusic);
 	}
 
 	public void PlayGameMusic()
 	{
-		AudioSource.PlayClipAtPoint(Instance.soundContainer.gameMusic, transform.position);
+		Camera.main.GetComponent<AudioSource>().PlayOneShot(Instance.soundContainer.gameMusic);
 	}
 
 	public void PlayHelloSound(int index)
