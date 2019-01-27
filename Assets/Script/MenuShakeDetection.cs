@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-[RequireComponent(typeof(CameraManager))]
+[RequireComponent (typeof (CameraManager))]
 public class MenuShakeDetection : MonoBehaviour {
 	float accelerometerUpdateInterval = 1.0f / 60.0f;
 	public float lowPassKernelWidthInSeconds = 1.0f;
@@ -17,10 +17,14 @@ public class MenuShakeDetection : MonoBehaviour {
 	private CameraManager cameraManager;
 
 	private bool playing = false;
-	
+
+	[SerializeField]
+	CanvasGroup menuGroup;
+	[SerializeField]
+	CanvasGroup creditsGroup;
+
 	void Start () {
 		lowPassFilterFactor = accelerometerUpdateInterval / lowPassKernelWidthInSeconds;
-		shakeDetectionThreshold *= shakeDetectionThreshold;
 		lowPassValue = Input.acceleration;
 
 		cameraManager = GetComponent<CameraManager> ();
@@ -37,10 +41,26 @@ public class MenuShakeDetection : MonoBehaviour {
 		}
 	}
 
-	void PlayGame() {
-		foreach(var hs in FindObjectsOfType<HumanSpawner>()) {
+	void PlayGame () {
+		playing = true;
+		foreach (var hs in FindObjectsOfType<HumanSpawner> ()) {
 			hs.Play ();
 		}
 		cameraManager.ZoomIn ();
+		StartCoroutine (FadeGroup (menuGroup, 0.0f));
+	}
+
+	void EndGame () {
+		StartCoroutine (FadeGroup (creditsGroup, 1.0f));
+	}
+
+	private IEnumerator FadeGroup (CanvasGroup cg, float value, float fadeTime = 2.0f) {
+		float endTime = Time.time + fadeTime;
+		float startAlpha = cg.alpha;
+		while (endTime >= Time.time) {
+			cg.alpha = Mathf.Lerp (value, startAlpha, (endTime - Time.time) / fadeTime);
+			yield return null;
+		}
+		cg.alpha = value;
 	}
 }
