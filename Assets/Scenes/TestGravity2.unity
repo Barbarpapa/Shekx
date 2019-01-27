@@ -215,7 +215,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-39158
+  m_Name: pb_Mesh-420508
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -975,7 +975,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-39156
+  m_Name: pb_Mesh-420506
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -1269,6 +1269,11 @@ PrefabInstance:
         type: 3}
       propertyPath: countdown
       value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 8157724579686985010, guid: 3db5ab8de26319a47949c0c48fecf456,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7037612457139426857, guid: 3db5ab8de26319a47949c0c48fecf456,
         type: 3}
