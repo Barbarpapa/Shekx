@@ -13,10 +13,6 @@ public class Furniture : MonoBehaviour
 	private void Start()
 	{
 		rigidbody = GetComponent<Rigidbody>();
-		if (isStatic = true)
-		{
-			rigidbody.isKinematic = false;
-		}
 	}
 
 	private void OnCollisionEnter(Collision other)
