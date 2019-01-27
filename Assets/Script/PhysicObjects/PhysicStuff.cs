@@ -35,39 +35,16 @@ public class PhysicStuff : MonoBehaviour
 
 	protected virtual void OnCollisionEnter(Collision other)
 	{
-		ContactPoint contact = other.GetContact(0);
-		if (other.relativeVelocity.sqrMagnitude < MessManager.Instance.data.softImpactSpeed) return;
-
-		//switch (GetCollisionType(other.gameObject))
-		//{
-		//	case CollisionType.Neutral:
-		//		GameObject part = MessManager.Instance.neutralParticlePool.GetPooledObject();
-		//		part.transform.position = contact.point;
-		//		part.transform.LookAt(contact.point - part.transform.position, Vector3.up);
-		//		part.SetActive(true);
-		//		break;
-		//}
-	}
-
-	protected  virtual void OnCollisionExit(Collision other)
-	{
-		hurtParticles.Stop();
-	}
-
-	//Use this function to put two things together
-	protected virtual void ItsGettingSerious(GameObject collidedObject)
-	{
 
 	}
-
 	protected CollisionType GetCollisionType(GameObject other)
 	{
-		//if (MessManager.Instance.furnitureLayer
-		//    == (MessManager.Instance.furnitureLayer | (1 << other.layer)))
-		//{
-		//	//It's a furniture
-		//	return other.GetComponent<Furniture>().type;
-		//}
+		if (MessManager.Instance.furnitureLayer
+			== (MessManager.Instance.furnitureLayer | (1 << other.layer)))
+		{
+			//It's a furniture
+			return other.GetComponent<Furniture>().hurt ? CollisionType.Hurt : CollisionType.Neutral;
+		}
 
 		if (MessManager.Instance.humanLayer
 		         == (MessManager.Instance.humanLayer | (1 << other.layer)))

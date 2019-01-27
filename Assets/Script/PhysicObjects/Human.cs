@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Human : PhysicStuff
 {
-	[SerializeField]
+
+	[SerializeField] private ParticleSystem surpriseParticles;
 	private int identity;
-	private int contactNum;
 	private float arouseFactor;
 	private float lastArouseFactor;
 	private float timeSinceLastContact;
@@ -15,7 +15,6 @@ public class Human : PhysicStuff
 
 	private float softSeksValue = 10f;
 	private float hardSeksValue = 30f;
-	public bool debug;
 
 	// Start is called before the first frame update
 	protected override void Start()
@@ -49,8 +48,6 @@ public class Human : PhysicStuff
 		{
 			arouseFactor = 0f;
 			AudioMaster.Instance.PlayStopSexSound(identity);
-			if (debug)
-				print("STOP");
 		}
 	}
 
@@ -70,8 +67,7 @@ public class Human : PhysicStuff
 			{
 				AudioMaster.Instance.PlaySurprisedSound(identity);
 				timeSinceLastSound = Time.time;
-				if (debug)
-					print("SURPRISE");
+				surpriseParticles.Play();
 			}
 			else
 			{
@@ -96,15 +92,21 @@ public class Human : PhysicStuff
 
 	protected override void OnCollisionEnter(Collision other)
 	{
+		float arouseContactRatio = 0f;
 		base.OnCollisionEnter(other);
 		ContactPoint contact = other.GetContact(0);
 		if (other.relativeVelocity.sqrMagnitude < MessManager.Instance.data.softImpactSpeed) return;
+
+		if (other.relativeVelocity.sqrMagnitude >= MessManager.Instance.data.hurtImpactSpeed)
+			arouseContactRatio = 3f;
+		else
+			arouseContactRatio = 1f;
 
 		switch (GetCollisionType(other.gameObject))
 		{
 			case CollisionType.Love:
 				timeSinceLastContact = Time.time;
-				arouseFactor += 1f;
+				arouseFactor += arouseContactRatio;
 				CheckArousedFactor(contact);
 				break;
 
@@ -116,7 +118,6 @@ public class Human : PhysicStuff
 				AudioMaster.Instance.PlayHurtSound(identity);
 				break;
 		}
-
 	}
 
 	protected override void OnCollisionExit(Collision other)

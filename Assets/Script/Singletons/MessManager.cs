@@ -52,7 +52,7 @@ public class MessManager : MonoBehaviour
 
 	private void Update()
 	{
-		if (!Input.GetKeyDown(KeyCode.P)) return;
+		if (!Input.GetKeyDown(KeyCode.Escape)) return;
 
 		pause = !pause;
 		Time.timeScale = pause ? 0f : 1f;

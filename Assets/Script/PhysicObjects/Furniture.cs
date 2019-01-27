@@ -5,6 +5,7 @@ using UnityEngine;
 public class Furniture : MonoBehaviour
 {
 	public bool isStatic;
+	public bool hurt;
 	private new Rigidbody rigidbody;
 
 	private void Start()
