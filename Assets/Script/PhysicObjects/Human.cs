@@ -128,6 +128,7 @@ public class Human : PhysicStuff
 				timeSinceLastContact = Time.time;
 				arouseFactor += arouseContactRatio;
 				CheckArousedFactor(contact);
+				MenuShakeDetection.humansCollided = true;
 				break;
 
 			case CollisionType.Hurt:
