@@ -23,9 +23,6 @@ public class MenuShakeDetection : MonoBehaviour {
 	[SerializeField]
 	CanvasGroup creditsGroup;
 
-	public static bool humansCollided = false;
-	private bool spawnersStarted = false;
-
 	void Start () {
 		lowPassFilterFactor = accelerometerUpdateInterval / lowPassKernelWidthInSeconds;
 		lowPassValue = Input.acceleration;
@@ -34,23 +31,19 @@ public class MenuShakeDetection : MonoBehaviour {
 	}
 
 	void Update () {
-		if (playing) {
-			if (humansCollided) {
-				StartSpawners ();
-			}
-		}
-		else {
-			acceleration = Input.acceleration;
-			lowPassValue = Vector3.Lerp (lowPassValue, acceleration, lowPassFilterFactor);
-			deltaAcceleration = acceleration - lowPassValue;
-			if (deltaAcceleration.sqrMagnitude >= shakeDetectionThreshold) {
-				PlayGame ();
-			}
+		if (playing)
+			return;
+		acceleration = Input.acceleration;
+		lowPassValue = Vector3.Lerp (lowPassValue, acceleration, lowPassFilterFactor);
+		deltaAcceleration = acceleration - lowPassValue;
+		if (deltaAcceleration.sqrMagnitude >= shakeDetectionThreshold) {
+			PlayGame ();
 		}
 	}
 
 	void PlayGame () {
 		playing = true;
+<<<<<<< HEAD
 		cameraManager.ZoomIn ();
 		StartCoroutine (FadeGroup (menuGroup, 0.0f));
 		AudioMaster.Instance.PlayGameMusic();
@@ -60,16 +53,17 @@ public class MenuShakeDetection : MonoBehaviour {
 		if (spawnersStarted)
 			return;
 		spawnersStarted = true;
+=======
+>>>>>>> parent of 3a9de47... Merge branch 'master' of https://github.com/Barbarpapa/Shekx
 		foreach (var hs in FindObjectsOfType<HumanSpawner> ()) {
 			hs.Play ();
 		}
+		cameraManager.ZoomIn ();
+		StartCoroutine (FadeGroup (menuGroup, 0.0f));
 	}
 
 	void EndGame () {
 		StartCoroutine (FadeGroup (creditsGroup, 1.0f));
-		spawnersStarted = false;
-		humansCollided = false;
-		playing = false;
 	}
 
 	private IEnumerator FadeGroup (CanvasGroup cg, float value, float fadeTime = 2.0f) {

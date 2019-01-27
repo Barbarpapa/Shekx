@@ -14,6 +14,8 @@ public class GravityManager : MonoBehaviour {
 	public float gravityScale = 9.81f;
 	public float deltaScale = 1.0f;
 
+	public Vector3 velocity;
+
 	public AnimationCurve angleCurve;
 	[Range(0, 1)]
 	public float angleFactor = 0.5f;
@@ -54,8 +56,8 @@ public class GravityManager : MonoBehaviour {
 	}
 
 	private void FixedUpdate () {
-		Physics.gravity = acceleration * gravityScale;
-		//Physics.gravity = Vector3.down * gravityScale;
+		//Physics.gravity = acceleration * gravityScale;
+		Physics.gravity = Vector3.down * gravityScale;
 
 		//rb.AddForce (deltaAcceleration * deltaScale, ForceMode.VelocityChange);
 		rb.velocity = deltaAcceleration * deltaScale;

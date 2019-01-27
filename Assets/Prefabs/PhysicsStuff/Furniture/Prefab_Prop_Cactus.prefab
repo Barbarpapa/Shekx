@@ -28,7 +28,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4254895975715317567}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0.000001809995, y: 0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -94,7 +94,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isStatic: 1
   hurt: 1
+<<<<<<< HEAD
   collisionToMove: 1
+=======
+>>>>>>> parent of 3a9de47... Merge branch 'master' of https://github.com/Barbarpapa/Shekx
 --- !u!54 &1755554289779495921
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -7,40 +7,26 @@ public class Human : PhysicStuff
 
 	[SerializeField] private ParticleSystem surpriseParticles;
 	[SerializeField] private ParticleSystem helloParticles;
-
-	[SerializeField] private int identity;
-	[SerializeField] private int color;
-	[SerializeField] private bool isRandom = true;
+	private int identity;
 	private float arouseFactor;
 	private float lastArouseFactor;
 	private float timeSinceLastContact;
 	private float timeSinceLastSound;
 	private float stopSekstime = 3f;
 
-	private float softSeksValue = 20f;
-	private float hardSeksValue = 50f;
+	private float softSeksValue = 10f;
+	private float hardSeksValue = 30f;
 
 	// Start is called before the first frame update
 	protected override void Start()
 	{
 		base.Start();
-		if (isRandom)
-		{
-			identity = Random.Range(0, 
-				AudioMaster.Instance.soundContainer.GetVoiceRange());
-		}
+		identity = Random.Range(0, 
+			AudioMaster.Instance.soundContainer.GetVoiceRange());
 
 		SkinnedMeshRenderer[] skin = 
 			transform.root.GetComponentsInChildren<SkinnedMeshRenderer>();
-		Color skinCol;
-		if (isRandom)
-		{
-			skinCol = MessManager.Instance.colorContainer.GetRandColor();
-		}
-		else
-		{
-			skinCol = MessManager.Instance.colorContainer.colors[color];
-		}
+		Color skinCol = MessManager.Instance.colorContainer.GetRandColor();
 		for (int i = 0; i < skin.Length; i++)
 		{
 			skin[i].material.color = skinCol;
@@ -128,7 +114,6 @@ public class Human : PhysicStuff
 				timeSinceLastContact = Time.time;
 				arouseFactor += arouseContactRatio;
 				CheckArousedFactor(contact);
-				MenuShakeDetection.humansCollided = true;
 				break;
 
 			case CollisionType.Hurt:
