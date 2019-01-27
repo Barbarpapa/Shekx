@@ -8,6 +8,11 @@ public class StaticFurniture : MonoBehaviour
 	[SerializeField] private AudioClip[] sounds;
 	private float lastTimeCollision;
 
+	private void Start()
+	{
+		source = GetComponent<AudioSource>();
+	}
+
 	private void OnCollisionEnter(Collision other)
 	{
 		if (sounds.Length == 0 ||
